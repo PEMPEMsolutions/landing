@@ -1,0 +1,236 @@
+@model LandingPage.Models.NosotrosViewModel
+
+@{
+    ViewBag.Title = "Nosotros";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="@Url.Content("~/Content/Nosotros.css")" />
+}
+
+<div class="nosotros-page">
+
+    <section class="nosotros-hero">
+
+        <div class="nosotros-intro reveal">
+
+            <div class="hero-number">
+                01
+            </div>
+
+            <span class="hero-label">
+                SOBRE NOSOTROS
+            </span>
+
+            <h1>
+                Tecnolog&iacute;a pensada
+                <br />
+                para <span>avanzar.</span>
+            </h1>
+
+            <p>
+                @Html.Raw(Model.Descripcion)
+            </p>
+
+        </div>
+
+        <div class="hero-visual reveal">
+
+            <div class="tech-circle circle-one"></div>
+            <div class="tech-circle circle-two"></div>
+            <div class="tech-circle circle-three"></div>
+
+            <div class="tech-line line-horizontal"></div>
+            <div class="tech-line line-vertical"></div>
+
+            <div class="tech-diamond">
+                <span>&lt;/&gt;</span>
+            </div>
+
+            <span class="tech-number number-one">
+                01
+            </span>
+
+            <span class="tech-number number-two">
+                02
+            </span>
+
+            <span class="tech-number number-three">
+                03
+            </span>
+
+        </div>
+
+    </section>
+
+    <section class="quienes-somos">
+
+        <div class="section-heading reveal">
+
+            <span class="section-label">
+                QUI&Eacute;NES SOMOS
+            </span>
+
+            <h2>
+                Una empresa enfocada
+                <br />
+                en <span>soluciones reales.</span>
+            </h2>
+
+        </div>
+
+        <div class="quienes-texto reveal">
+
+            <p>
+                Somos una empresa dedicada al desarrollo
+                de soluciones tecnol&oacute;gicas para negocios
+                y organizaciones que buscan mejorar la
+                manera en que trabajan.
+            </p>
+
+            <p>
+                Combinamos desarrollo, creatividad,
+                organizaci&oacute;n e innovaci&oacute;n para crear
+                herramientas &uacute;tiles, funcionales y
+                adaptadas a las necesidades de cada cliente.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="equipo-section">
+
+        <div class="equipo-heading reveal">
+
+            <span class="section-label">
+                NUESTRO EQUIPO
+            </span>
+
+            <h2>
+                Las personas detr&aacute;s
+                <br />
+                de cada <span>soluci&oacute;n.</span>
+            </h2>
+
+            <p>
+                Nuestro trabajo nace de la colaboraci&oacute;n,
+                el conocimiento y las ideas de nuestro equipo.
+            </p>
+
+        </div>
+
+        <div class="socios-grid">
+
+            @foreach (var socio in Model.Socios)
+            {
+                <article class="socio-card reveal">
+
+                    <div class="socio-image-container">
+
+                        <img src="@Url.Content(socio.Imagen)"
+                             alt="@Html.Raw(socio.Nombre)"
+                             class="socio-image" />
+
+                    </div>
+
+                    <div class="socio-content">
+
+                        <span class="socio-number">
+                            @socio.Numero
+                        </span>
+
+                        <h3>
+                            @Html.Raw(socio.Nombre)
+                        </h3>
+
+                        <h4>
+                            @Html.Raw(socio.Cargo)
+                        </h4>
+
+                        <p>
+                            @Html.Raw(socio.Descripcion)
+                        </p>
+
+                    </div>
+
+                </article>
+            }
+
+        </div>
+
+    </section>
+
+    <section class="trabajo-section">
+
+        <div class="trabajo-heading reveal">
+
+            <span class="section-label">
+                NUESTRA FORMA DE TRABAJAR
+            </span>
+
+            <h2>
+                Desarrollo con
+                <span>prop&oacute;sito.</span>
+            </h2>
+
+        </div>
+
+        <div class="proceso">
+
+            @foreach (var proceso in Model.Procesos)
+            {
+                <div class="proceso-item reveal">
+
+                    <span>
+                        @proceso.Numero
+                    </span>
+
+                    <h3>
+                        @Html.Raw(proceso.Titulo)
+                    </h3>
+
+                    <p>
+                        @Html.Raw(proceso.Descripcion)
+                    </p>
+
+                </div>
+            }
+
+        </div>
+
+    </section>
+
+    <section class="nosotros-final reveal">
+
+        <span class="section-label">
+            PEMPEM'S SOLUTIONS
+        </span>
+
+        <h2>
+            Tecnolog&iacute;a que
+            <span>conecta ideas.</span>
+        </h2>
+
+        <p>
+            Nuestro objetivo es transformar necesidades
+            empresariales en soluciones tecnol&oacute;gicas
+            innovadoras, accesibles y personalizadas.
+        </p>
+
+        <a href="@Url.Action("Index", "Cotizacion")"
+           class="btn-primary">
+
+            Solicita una cotizaci&oacute;n
+
+            <span>&rarr;</span>
+
+        </a>
+
+    </section>
+
+</div>
+
+@section Scripts {
+    <script src="@Url.Content("~/Scripts/Nosotros.js")"></script>
+}

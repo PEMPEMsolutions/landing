@@ -1,0 +1,365 @@
+@model LandingPage.Models.ContactoViewModel
+
+@{
+    ViewBag.Title = "Contacto";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="@Url.Content("~/Content/Contacto.css")" />
+}
+
+<div class="contacto-page">
+
+    <section class="contacto-hero">
+
+        <div class="contacto-hero-content reveal">
+
+            <span class="section-label">
+                CONT&Aacute;CTANOS
+            </span>
+
+            <h1>
+                Hablemos de
+                <br />
+                tu <span>proyecto.</span>
+            </h1>
+
+            <p>
+                &iquest;Tienes una idea, una necesidad o un proyecto
+                que quieras desarrollar? Escr&iacute;benos y conversemos
+                sobre c&oacute;mo podemos ayudarte.
+            </p>
+
+        </div>
+
+        <div class="contacto-hero-visual reveal">
+
+            <div class="contacto-orbit orbit-one"></div>
+            <div class="contacto-orbit orbit-two"></div>
+
+            <div class="contacto-core">
+                <span>&commat;</span>
+            </div>
+
+            <span class="contacto-point point-one">
+                CONNECT
+            </span>
+
+            <span class="contacto-point point-two">
+                PEMPEM
+            </span>
+
+        </div>
+
+    </section>
+
+    @if (Model.Enviado)
+    {
+        <section class="contacto-success reveal visible">
+
+            <div class="success-icon">
+                &check;
+            </div>
+
+            <span class="section-label">
+                MENSAJE ENVIADO
+            </span>
+
+            <h2>
+                &iexcl;Gracias por escribirnos!
+            </h2>
+
+            <p>
+                Hemos recibido tu mensaje correctamente.
+                Nuestro equipo revisar&aacute; la informaci&oacute;n
+                y se pondr&aacute; en contacto contigo.
+            </p>
+
+            <a href="@Url.Action("Index", "Home")"
+               class="contacto-button">
+
+                Volver al inicio
+
+                <span>&rarr;</span>
+
+            </a>
+
+        </section>
+    }
+    else
+    {
+        <section class="contacto-content">
+
+            <div class="contacto-info reveal">
+
+                <span class="section-label">
+                    INFORMACI&Oacute;N
+                </span>
+
+                <h2>
+                    Estamos
+                    <span>para ayudarte.</span>
+                </h2>
+
+                <p>
+                    Puedes utilizar el formulario para enviarnos
+                    cualquier consulta relacionada con nuestros
+                    servicios, proyectos o soluciones tecnol&oacute;gicas.
+                </p>
+
+                <div class="contacto-datos">
+
+                    <div class="dato-contacto">
+
+                        <span class="dato-icon">
+                            &commat;
+                        </span>
+
+                        <div>
+
+                            <small>
+                                CORREO
+                            </small>
+
+                            <p>
+                                contacto@pempemsolutions.com
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="dato-contacto">
+
+                        <span class="dato-icon">
+                            &#9742;
+                        </span>
+
+                        <div>
+
+                            <small>
+                                TEL&Eacute;FONO
+                            </small>
+
+                            <p>
+                                +503 2222-2222
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="dato-contacto">
+
+                        <span class="dato-icon">
+                            &#9906;
+                        </span>
+
+                        <div>
+
+                            <small>
+                                UBICACI&Oacute;N
+                            </small>
+
+                            <p>
+                                San Salvador, El Salvador
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="contacto-form-container reveal">
+
+                @using (Html.BeginForm(
+                    "Index",
+                    "Contacto",
+                    FormMethod.Post,
+                    new
+                    {
+                        @class = "contacto-form",
+                        id = "contactoForm"
+                    }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="Nombre">
+                                Nombre completo
+                            </label>
+
+                            <input type="text"
+                                   id="Nombre"
+                                   name="Nombre"
+                                   value="@Model.Nombre"
+                                   class="form-control"
+                                   placeholder="Escribe tu nombre" />
+
+                            @Html.ValidationMessageFor(
+                                model => model.Nombre,
+                                "",
+                                new
+                                {
+                                    @class = "validation-message"
+                                })
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="Correo">
+                                Correo electr&oacute;nico
+                            </label>
+
+                            <input type="email"
+                                   id="Correo"
+                                   name="Correo"
+                                   value="@Model.Correo"
+                                   class="form-control"
+                                   placeholder="correo@ejemplo.com" />
+
+                            @Html.ValidationMessageFor(
+                                model => model.Correo,
+                                "",
+                                new
+                                {
+                                    @class = "validation-message"
+                                })
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="Telefono">
+                                Tel&eacute;fono
+                            </label>
+
+                            <input type="text"
+                                   id="Telefono"
+                                   name="Telefono"
+                                   value="@Model.Telefono"
+                                   class="form-control"
+                                   placeholder="0000-0000" />
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="Asunto">
+                                Asunto
+                            </label>
+
+                            <select id="Asunto"
+                                    name="Asunto"
+                                    class="form-control">
+
+                                <option value="">
+                                    Selecciona un asunto
+                                </option>
+
+                                <option value="Informaci&oacute;n">
+                                    Informaci&oacute;n
+                                </option>
+
+                                <option value="Servicios">
+                                    Servicios
+                                </option>
+
+                                <option value="Proyecto">
+                                    Nuevo proyecto
+                                </option>
+
+                                <option value="Soporte">
+                                    Soporte
+                                </option>
+
+                                <option value="Otro">
+                                    Otro
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="Mensaje">
+                            Mensaje
+                        </label>
+
+                        <textarea id="Mensaje"
+                                  name="Mensaje"
+                                  class="form-control form-textarea"
+                                  rows="7"
+                                  placeholder="Escribe aqu&iacute; tu mensaje...">@Model.Mensaje</textarea>
+
+                        @Html.ValidationMessageFor(
+                            model => model.Mensaje,
+                            "",
+                            new
+                            {
+                                @class = "validation-message"
+                            })
+
+                    </div>
+
+                    <div class="form-footer">
+
+                        <p>
+                            Responderemos a tu consulta con la
+                            informaci&oacute;n correspondiente.
+                        </p>
+
+                        <button type="submit"
+                                class="contacto-button">
+
+                            Enviar mensaje
+
+                            <span>&rarr;</span>
+
+                        </button>
+
+                    </div>
+                }
+
+            </div>
+
+        </section>
+    }
+
+    <section class="contacto-bottom reveal">
+
+        <span class="section-label">
+            PEMPEM'S SOLUTIONS
+        </span>
+
+        <h2>
+            Conectemos para
+            <span>crear.</span>
+        </h2>
+
+        <p>
+            Una buena soluci&oacute;n comienza con una buena
+            conversaci&oacute;n.
+        </p>
+
+    </section>
+
+</div>
+
+@section Scripts {
+    <script src="@Url.Content("~/Scripts/Contacto.js")"></script>
+}

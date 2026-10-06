@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>
+        @ViewBag.Title - PEMPEM'S Solutions
+    </title>
+
+    <link rel="stylesheet"
+          href="@Url.Content("~/Content/Site.css")" />
+
+    @RenderSection("Styles", required: false)
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+
+            <a href="@Url.Action("Index", "Home")"
+               class="site-brand">
+
+                <img src="@Url.Content("~/Images/pempem-logo.png")"
+                     alt="PEMPEM'S Solutions"
+                     class="site-logo" />
+
+            </a>
+
+
+            <nav class="main-nav">
+
+
+                <a href="@Url.Action("Index", "Home")"
+                   class="nav-link">
+
+                    Inicio
+
+                </a>
+
+
+                <a href="@Url.Action("Index", "Nosotros")"
+                   class="nav-link">
+
+                    Nosotros
+
+                </a>
+
+
+                <a href="@Url.Action("Index", "Servicios")"
+                   class="nav-link">
+
+                    Servicios
+
+                </a>
+
+
+                <a href="@Url.Action("Index", "Proyectos")"
+                   class="nav-link">
+
+                    Proyectos
+
+                </a>
+
+
+                <a href="@Url.Action("Index", "Contacto")"
+                   class="nav-link">
+
+                    Contacto
+
+                </a>
+
+
+                <a href="@Url.Action("Index", "Cotizacion")"
+                   class="quote-button">
+
+                    Solicita una cotizaci&oacute;n
+
+                    <span>↗</span>
+
+                </a>
+
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTENIDO
+         ===================================================== -->
+
+    <main class="page-content">
+
+        @RenderBody()
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+
+            <div class="footer-brand">
+
+                <img src="@Url.Content("~/Images/pempem-logo.png")"
+                     alt="PEMPEM'S Solutions"
+                     class="footer-logo" />
+
+                <p>
+
+                    Desarrollamos soluciones digitales
+                    pensadas para ayudar a las empresas
+                    a crecer, organizarse y avanzar.
+
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Navegaci&oacute;n
+                </h4>
+
+
+                <a href="@Url.Action("Index", "Home")">
+                    Inicio
+                </a>
+
+
+                <a href="@Url.Action("Index", "Nosotros")">
+                    Nosotros
+                </a>
+
+
+                <a href="@Url.Action("Index", "Servicios")">
+                    Servicios
+                </a>
+
+
+                <a href="@Url.Action("Index", "Proyectos")">
+                    Proyectos
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Contacto
+                </h4>
+
+
+                <a href="@Url.Action("Index", "Contacto")">
+                    Cont&aacute;ctanos
+                </a>
+
+
+                <a href="@Url.Action("Index", "Cotizacion")">
+                    Solicitar cotizaci&oacute;n
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Ubicaci&oacute;n
+                </h4>
+
+
+                <p>
+                    San Salvador
+                </p>
+
+
+                <p>
+                    El Salvador
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; 2026 PEMPEM'S Solutions
+            </p>
+
+
+            <p>
+                Tecnolog&iacute;a &middot; Desarrollo &middot; Innovaci&oacute;n
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="@Url.Content("~/Scripts/Site.js")"></script>
+
+    @RenderSection("Scripts", required: false)
+
+</body>
+
+</html>

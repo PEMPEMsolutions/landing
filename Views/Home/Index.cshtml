@@ -1,0 +1,426 @@
+﻿@model LandingPage.Models.HomeViewModel
+
+@{
+    ViewBag.Title = "Inicio";
+}
+
+
+@section Styles {
+
+    <link rel="stylesheet"
+          href="@Url.Content("~/Content/Home.css")" />
+
+}
+
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+
+<section class="hero-section" id="top">
+
+    <div class="hero-container">
+
+
+        <div class="hero-content reveal">
+
+            <span class="hero-label">
+
+                SOLUCIONES DIGITALES
+
+            </span>
+
+
+            <h1>
+
+                Transformamos
+
+                <span>ideas</span>
+
+                en soluciones digitales.
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Desarrollamos software, plataformas web y
+                soluciones digitales personalizadas para
+                empresas que buscan crecer, optimizar sus
+                procesos y adaptarse al futuro.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a href="@Url.Action("Index", "Contacto")"
+                   class="btn-primary">
+
+                    Comienza tu proyecto ↗
+
+                </a>
+
+
+                <a href="#propuesta"
+                   class="btn-secondary">
+
+                    Conoce m&aacute;s ↓
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             TARJETA DEL HERO
+             ================================================= -->
+
+        <div class="hero-card reveal">
+
+
+            <div class="hero-card-top">
+
+                <span>
+                    PEMPEM'S SOLUTIONS
+                </span>
+
+
+                <span>
+                    01 / 04
+                </span>
+
+            </div>
+
+
+            <div class="hero-logo-container">
+
+                <img src="@Url.Content("~/Images/pempem-logo.png")"
+                     alt="PEMPEM'S Solutions"
+                     class="hero-logo" />
+
+            </div>
+
+
+            <div class="hero-card-bottom">
+
+                <span>
+                    DESARROLLO
+                </span>
+
+                <span>
+                    SOLUCIONES
+                </span>
+
+                <span>
+                    INNOVACI&Oacute;N
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ESTAD&Iacute;STICAS
+     ===================================================== -->
+
+<section class="stats-section">
+
+    <div class="stats-container">
+
+
+        @foreach (var estadistica in Model.Estadisticas)
+        {
+
+            <div class="stat reveal">
+
+                <strong>
+                    @Html.Raw(estadistica.Valor)
+                </strong>
+
+                <span>
+                    @Html.Raw(estadistica.Texto)
+                </span>
+
+            </div>
+
+        }
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROPUESTA
+     ===================================================== -->
+
+<section class="proposal-section"
+         id="propuesta">
+
+    <div class="section-container reveal">
+
+
+        <span class="section-label">
+
+            NUESTRA PROPUESTA
+
+        </span>
+
+
+        <h2 class="section-title">
+
+            Tecnolog&iacute;a que se adapta a tu negocio.
+
+        </h2>
+
+
+        <p class="section-description">
+
+            Cada empresa tiene necesidades diferentes.
+            Por eso dise&ntilde;amos soluciones tecnol&oacute;gicas
+            enfocadas en resolver problemas reales y
+            generar un impacto positivo desde el primer d&iacute;a.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SERVICIOS
+     ===================================================== -->
+
+<section class="services-section">
+
+    <div class="section-container">
+
+
+        <span class="section-label reveal">
+
+            NUESTROS SERVICIOS
+
+        </span>
+
+
+        <h2 class="section-title reveal">
+
+            Software que se adapta a ti.
+
+        </h2>
+
+
+        <p class="section-description reveal">
+
+            Soluciones digitales dise&ntilde;adas para simplificar
+            procesos, mejorar la gesti&oacute;n y ayudar a las
+            empresas a crecer.
+
+        </p>
+
+
+        <div class="services-grid">
+
+
+            @foreach (var servicio in Model.Servicios)
+            {
+
+                <article class="service-card reveal">
+
+
+                    <span class="service-number">
+
+                        @servicio.Numero
+
+                    </span>
+
+
+                    <div class="service-icon">
+
+                        @Html.Raw(servicio.Icono)
+
+                    </div>
+
+
+                    <h3>
+
+                        @Html.Raw(servicio.Titulo)
+
+                    </h3>
+
+
+                    <p>
+
+                        @Html.Raw(servicio.Descripcion)
+
+                    </p>
+
+
+                    <a href="@Url.Action("Index", "Servicios")">
+
+                        Conocer servicio ↗
+
+                    </a>
+
+                </article>
+
+            }
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PORTAFOLIO
+     ===================================================== -->
+
+<section class="portfolio-section">
+
+    <div class="section-container">
+
+
+        <span class="section-label reveal">
+
+            PORTAFOLIO
+
+        </span>
+
+
+        <h2 class="section-title reveal">
+
+            Proyectos que hemos desarrollado.
+
+        </h2>
+
+
+        <p class="section-description reveal">
+
+            Conoce algunos de los proyectos y propuestas
+            digitales desarrolladas por PEMPEM'S Solutions.
+
+        </p>
+
+
+        <div class="portfolio-grid">
+
+
+            @foreach (var proyecto in Model.Proyectos)
+            {
+
+                <article class="portfolio-card reveal">
+
+
+                    <span class="portfolio-number">
+
+                        @Html.Raw(proyecto.Numero)
+
+                    </span>
+
+
+                    <span class="portfolio-category">
+
+                        @Html.Raw(proyecto.Categoria)
+
+                    </span>
+
+
+                    <h3>
+
+                        @Html.Raw(proyecto.Titulo)
+
+                    </h3>
+
+
+                    <p>
+
+                        @Html.Raw(proyecto.Descripcion)
+
+                    </p>
+
+
+                    <a href="@Url.Action("Index", "Proyectos")"
+                       class="portfolio-link">
+
+                        Ver proyecto ↗
+
+                    </a>
+
+                </article>
+
+            }
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+     ===================================================== -->
+
+<section class="cta-section">
+
+    <div class="cta-container reveal">
+
+
+        <span class="section-label">
+
+            &iquest;TIENES UN PROYECTO?
+
+        </span>
+
+
+        <h2>
+
+            Hagamos realidad tu idea.
+
+        </h2>
+
+
+        <p>
+
+            Cu&eacute;ntanos qu&eacute; necesitas y encontremos juntos
+            una soluci&oacute;n tecnol&oacute;gica para tu negocio.
+
+        </p>
+
+
+        <a href="@Url.Action("Index", "Cotizacion")"
+           class="btn-primary">
+
+            Solicita una cotizaci&oacute;n ↗
+
+        </a>
+
+    </div>
+
+</section>
+
+
+@section Scripts {
+
+    <script src="@Url.Content("~/Scripts/Home.js")"></script>
+
+}

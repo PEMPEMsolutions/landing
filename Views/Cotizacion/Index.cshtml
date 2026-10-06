@@ -1,0 +1,379 @@
+@model LandingPage.Models.CotizacionViewModel
+
+@{
+    ViewBag.Title = "Solicitar cotizaci&oacute;n";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="@Url.Content("~/Content/Cotizacion.css")" />
+}
+
+<div class="cotizacion-page">
+
+    <section class="cotizacion-hero">
+
+        <div class="cotizacion-hero-content reveal">
+
+            <span class="section-label">
+                SOLICITA UNA COTIZACI&Oacute;N
+            </span>
+
+            <h1>
+                Hagamos realidad
+                <br />
+                tu <span>pr&oacute;xima idea.</span>
+            </h1>
+
+            <p>
+                Cu&eacute;ntanos qu&eacute; necesitas y nuestro equipo
+                analizar&aacute; tu proyecto para encontrar una
+                soluci&oacute;n adecuada.
+            </p>
+
+        </div>
+
+        <div class="cotizacion-hero-visual reveal">
+
+            <div class="cotizacion-circle circle-one"></div>
+            <div class="cotizacion-circle circle-two"></div>
+
+            <div class="cotizacion-core">
+                <span>&rarr;</span>
+            </div>
+
+            <span class="cotizacion-point point-one">
+                IDEA
+            </span>
+
+            <span class="cotizacion-point point-two">
+                SOLUCI&Oacute;N
+            </span>
+
+        </div>
+
+    </section>
+
+    @if (Model.Enviado)
+    {
+        <section class="cotizacion-success reveal visible">
+
+            <div class="success-icon">
+                &check;
+            </div>
+
+            <span class="section-label">
+                SOLICITUD RECIBIDA
+            </span>
+
+            <h2>
+                &iexcl;Gracias por contactarnos!
+            </h2>
+
+            <p>
+                Hemos recibido tu solicitud de cotizaci&oacute;n.
+                Nuestro equipo revisar&aacute; la informaci&oacute;n
+                proporcionada.
+            </p>
+
+            <a href="@Url.Action("Index", "Home")"
+               class="cotizacion-button">
+
+                Volver al inicio
+
+                <span>&rarr;</span>
+
+            </a>
+
+        </section>
+    }
+    else
+    {
+        <section class="cotizacion-form-section">
+
+            <div class="form-heading reveal">
+
+                <span class="section-label">
+                    CU&Eacute;NTANOS SOBRE TU PROYECTO
+                </span>
+
+                <h2>
+                    Empecemos por
+                    <span>lo b&aacute;sico.</span>
+                </h2>
+
+                <p>
+                    Completa el siguiente formulario y
+                    proporci&oacute;nanos la informaci&oacute;n necesaria
+                    para conocer tu proyecto.
+                </p>
+
+            </div>
+
+            @using (Html.BeginForm(
+                "Index",
+                "Cotizacion",
+                FormMethod.Post,
+                new { @class = "cotizacion-form", id = "cotizacionForm" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-grid">
+
+                    <div class="form-group reveal">
+
+                        @Html.LabelFor(
+                            model => model.Nombre,
+                            "Nombre completo")
+
+                        @Html.TextBoxFor(
+                            model => model.Nombre,
+                            new
+                            {
+                                @class = "form-control",
+                                placeholder = "Escribe tu nombre"
+                            })
+
+                        @Html.ValidationMessageFor(
+                            model => model.Nombre,
+                            "",
+                            new { @class = "validation-message" })
+
+                    </div>
+
+                    <div class="form-group reveal">
+
+                        @Html.LabelFor(
+                            model => model.Correo,
+                            "Correo electr&oacute;nico")
+
+                        @Html.TextBoxFor(
+                            model => model.Correo,
+                            new
+                            {
+                                @class = "form-control",
+                                type = "email",
+                                placeholder = "correo@ejemplo.com"
+                            })
+
+                        @Html.ValidationMessageFor(
+                            model => model.Correo,
+                            "",
+                            new { @class = "validation-message" })
+
+                    </div>
+
+                    <div class="form-group reveal">
+
+                        @Html.LabelFor(
+                            model => model.Telefono,
+                            "Tel&eacute;fono")
+
+                        @Html.TextBoxFor(
+                            model => model.Telefono,
+                            new
+                            {
+                                @class = "form-control",
+                                placeholder = "0000-0000"
+                            })
+
+                    </div>
+
+                    <div class="form-group reveal">
+
+                        @Html.LabelFor(
+                            model => model.Empresa,
+                            "Empresa")
+
+                        @Html.TextBoxFor(
+                            model => model.Empresa,
+                            new
+                            {
+                                @class = "form-control",
+                                placeholder = "Nombre de la empresa"
+                            })
+
+                    </div>
+
+                    <div class="form-group form-group-full reveal">
+
+                        @Html.LabelFor(
+                            model => model.Servicio,
+                            "Servicio que necesitas")
+
+                        @Html.DropDownListFor(
+                            model => model.Servicio,
+                            new List<SelectListItem>
+                            {
+                                new SelectListItem
+                                {
+                                    Text = "Selecciona un servicio",
+                                    Value = ""
+                                },
+
+                                new SelectListItem
+                                {
+                                    Text = "Desarrollo web",
+                                    Value = "Desarrollo web"
+                                },
+
+                                new SelectListItem
+                                {
+                                    Text = "Sistemas administrativos",
+                                    Value = "Sistemas administrativos"
+                                },
+
+                                new SelectListItem
+                                {
+                                    Text = "Bases de datos",
+                                    Value = "Bases de datos"
+                                },
+
+                                new SelectListItem
+                                {
+                                    Text = "Soluciones empresariales",
+                                    Value = "Soluciones empresariales"
+                                },
+
+                                new SelectListItem
+                                {
+                                    Text = "Experiencia de usuario",
+                                    Value = "Experiencia de usuario"
+                                },
+
+                                new SelectListItem
+                                {
+                                    Text = "Consultor&iacute;a tecnol&oacute;gica",
+                                    Value = "Consultoria tecnologica"
+                                }
+                            },
+                            new
+                            {
+                                @class = "form-control"
+                            })
+
+                        @Html.ValidationMessageFor(
+                            model => model.Servicio,
+                            "",
+                            new { @class = "validation-message" })
+
+                    </div>
+
+                    <div class="form-group form-group-full reveal">
+
+                        @Html.LabelFor(
+                            model => model.Mensaje,
+                            "Cu&eacute;ntanos sobre tu proyecto")
+
+                        @Html.TextAreaFor(
+                            model => model.Mensaje,
+                            new
+                            {
+                                @class = "form-control form-textarea",
+                                rows = "7",
+                                placeholder = "Describe brevemente tu idea, necesidad o proyecto..."
+                            })
+
+                        @Html.ValidationMessageFor(
+                            model => model.Mensaje,
+                            "",
+                            new { @class = "validation-message" })
+
+                    </div>
+
+                </div>
+
+                <div class="form-bottom reveal">
+
+                    <p>
+                        Al enviar este formulario nos autorizas
+                        a utilizar la informaci&oacute;n proporcionada
+                        para comunicarnos contigo sobre tu solicitud.
+                    </p>
+
+                    <button type="submit"
+                            class="cotizacion-button">
+
+                        Enviar solicitud
+
+                        <span>&rarr;</span>
+
+                    </button>
+
+                </div>
+            }
+
+        </section>
+    }
+
+    <section class="cotizacion-info reveal">
+
+        <div class="info-item">
+
+            <span class="info-number">
+                01
+            </span>
+
+            <div>
+
+                <h3>
+                    Analizamos
+                </h3>
+
+                <p>
+                    Revisamos la informaci&oacute;n de tu proyecto
+                    y sus necesidades principales.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="info-item">
+
+            <span class="info-number">
+                02
+            </span>
+
+            <div>
+
+                <h3>
+                    Proponemos
+                </h3>
+
+                <p>
+                    Definimos una propuesta de soluci&oacute;n
+                    acorde con tus requerimientos.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="info-item">
+
+            <span class="info-number">
+                03
+            </span>
+
+            <div>
+
+                <h3>
+                    Contactamos
+                </h3>
+
+                <p>
+                    Nos comunicamos contigo para continuar
+                    con los detalles del proyecto.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+@section Scripts {
+    <script src="@Url.Content("~/Scripts/Cotizacion.js")"></script>
+}

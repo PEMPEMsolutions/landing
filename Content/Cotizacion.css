@@ -1,0 +1,462 @@
+﻿.cotizacion-page {
+    width: min(1100px, calc(100% - 80px));
+    margin: 0 auto;
+}
+
+.cotizacion-hero {
+    min-height: 560px;
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    align-items: center;
+    gap: 90px;
+    border-bottom: 1px solid rgba(130, 160, 180, 0.15);
+}
+
+.cotizacion-hero-content {
+    max-width: 620px;
+}
+
+.section-label {
+    display: block;
+    margin-bottom: 20px;
+    color: #08a8e5;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 6px;
+}
+
+.cotizacion-hero h1 {
+    margin: 0;
+    color: #f4f7fb;
+    font-size: clamp(48px, 5vw, 70px);
+    line-height: 0.98;
+    letter-spacing: -3px;
+}
+
+    .cotizacion-hero h1 span {
+        color: #08a8e5;
+    }
+
+.cotizacion-hero p {
+    max-width: 540px;
+    margin: 30px 0 0;
+    color: #819bad;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.cotizacion-hero-visual {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: end;
+}
+
+.cotizacion-circle {
+    position: absolute;
+    border: 1px solid rgba(8, 168, 229, 0.4);
+    border-radius: 50%;
+}
+
+.circle-one {
+    width: 350px;
+    height: 350px;
+    animation: rotacion 20s linear infinite;
+}
+
+.circle-two {
+    width: 235px;
+    height: 235px;
+    border-style: dashed;
+    animation: rotacion-inversa 15s linear infinite;
+}
+
+.cotizacion-core {
+    width: 120px;
+    height: 120px;
+    border: 1px solid #08a8e5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #08a8e5;
+    font-size: 32px;
+    background: #03131f;
+    z-index: 2;
+    animation: core-pulso 3s ease-in-out infinite;
+}
+
+.cotizacion-point {
+    position: absolute;
+    color: #718b9b;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.point-one {
+    top: 48px;
+    right: 30px;
+}
+
+.point-two {
+    bottom: 65px;
+    left: 25px;
+}
+
+.form-section {
+    padding: 100px 0;
+}
+
+.cotizacion-form-section {
+    padding: 105px 0;
+}
+
+.form-heading {
+    max-width: 700px;
+    margin-bottom: 50px;
+}
+
+    .form-heading h2 {
+        margin: 0;
+        color: #f4f7fb;
+        font-size: clamp(35px, 4vw, 50px);
+        line-height: 1.05;
+        letter-spacing: -2px;
+    }
+
+        .form-heading h2 span {
+            color: #08a8e5;
+        }
+
+    .form-heading p {
+        max-width: 620px;
+        margin: 25px 0 0;
+        color: #819bad;
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+.cotizacion-form {
+    width: 100%;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group-full {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    margin-bottom: 10px;
+    color: #d8e4eb;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    min-height: 48px;
+    padding: 13px 16px;
+    border: 1px solid rgba(8, 168, 229, 0.2);
+    border-radius: 2px;
+    outline: none;
+    background: #061925;
+    color: #f4f7fb;
+    font-family: inherit;
+    font-size: 13px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+    .form-control::placeholder {
+        color: #506b7b;
+    }
+
+    .form-control:focus {
+        border-color: #08a8e5;
+        background: #071f2f;
+    }
+
+select.form-control {
+    appearance: none;
+    cursor: pointer;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 170px;
+}
+
+.validation-message {
+    margin-top: 7px;
+    color: #ef6b7a;
+    font-size: 11px;
+}
+
+.input-validation-error {
+    border-color: #ef6b7a;
+}
+
+.form-bottom {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(130, 160, 180, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+    .form-bottom p {
+        max-width: 600px;
+        margin: 0;
+        color: #607b8c;
+        font-size: 11px;
+        line-height: 1.7;
+    }
+
+.cotizacion-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 46px;
+    padding: 0 25px;
+    border: 1px solid #08a8e5;
+    border-radius: 25px;
+    background: #08a8e5;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+    .cotizacion-button:hover {
+        background: #0797cc;
+        color: #ffffff;
+        transform: translateY(-3px);
+    }
+
+.cotizacion-success {
+    margin: 105px 0;
+    padding: 90px 40px;
+    text-align: center;
+    border-top: 1px solid rgba(8, 168, 229, 0.25);
+    border-bottom: 1px solid rgba(8, 168, 229, 0.25);
+}
+
+.success-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 25px;
+    border: 1px solid #08a8e5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #08a8e5;
+    font-size: 25px;
+}
+
+.cotizacion-success h2 {
+    margin: 0;
+    color: #f4f7fb;
+    font-size: clamp(34px, 4vw, 50px);
+}
+
+.cotizacion-success p {
+    max-width: 600px;
+    margin: 22px auto 30px;
+    color: #819bad;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.cotizacion-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 100px;
+    border-top: 1px solid rgba(8, 168, 229, 0.2);
+    border-left: 1px solid rgba(8, 168, 229, 0.2);
+}
+
+.info-item {
+    min-height: 220px;
+    padding: 30px;
+    display: flex;
+    gap: 25px;
+    border-right: 1px solid rgba(8, 168, 229, 0.2);
+    border-bottom: 1px solid rgba(8, 168, 229, 0.2);
+}
+
+.info-number {
+    color: #08a8e5;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.info-item h3 {
+    margin: 0 0 12px;
+    color: #f4f7fb;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.info-item p {
+    margin: 0;
+    color: #819bad;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+    .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+@keyframes rotacion {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotacion-inversa {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes core-pulso {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.06);
+    }
+}
+
+@media (max-width: 950px) {
+    .cotizacion-page {
+        width: min(760px, calc(100% - 50px));
+    }
+
+    .cotizacion-hero {
+        grid-template-columns: 1fr;
+        padding: 65px 0 80px;
+    }
+
+    .cotizacion-hero-visual {
+        justify-self: center;
+    }
+
+    .cotizacion-info {
+        grid-template-columns: 1fr;
+    }
+
+    .form-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 700px) {
+    .cotizacion-page {
+        width: calc(100% - 35px);
+    }
+
+    .cotizacion-hero h1 {
+        font-size: 44px;
+    }
+
+    .cotizacion-hero-visual {
+        width: 310px;
+        height: 310px;
+    }
+
+    .circle-one {
+        width: 275px;
+        height: 275px;
+    }
+
+    .circle-two {
+        width: 195px;
+        height: 195px;
+    }
+
+    .cotizacion-core {
+        width: 95px;
+        height: 95px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group-full {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 450px) {
+    .cotizacion-hero h1 {
+        font-size: 38px;
+    }
+
+    .cotizacion-hero-visual {
+        width: 270px;
+        height: 270px;
+    }
+
+    .circle-one {
+        width: 240px;
+        height: 240px;
+    }
+
+    .circle-two {
+        width: 170px;
+        height: 170px;
+    }
+
+    .cotizacion-core {
+        width: 80px;
+        height: 80px;
+    }
+
+    .cotizacion-success {
+        padding: 60px 20px;
+    }
+
+    .info-item {
+        min-height: auto;
+    }
+}

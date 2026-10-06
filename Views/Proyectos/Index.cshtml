@@ -1,0 +1,184 @@
+@{
+    ViewBag.Title = "Proyectos";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="@Url.Content("~/Content/Proyectos.css")" />
+}
+
+<div class="proyectos-page">
+
+    <section class="proyectos-hero">
+
+        <div class="proyectos-hero-content reveal">
+
+            <span class="section-label">
+                NUESTRO PROYECTO
+            </span>
+
+            <h1>
+                Un proyecto,
+                <br />
+                una <span>soluci&oacute;n.</span>
+            </h1>
+
+            <p>
+                Presentamos FarmaCorps, un proyecto desarrollado
+                para ofrecer una experiencia digital enfocada en
+                la gesti&oacute;n y comercializaci&oacute;n de productos
+                farmac&eacute;uticos.
+            </p>
+
+        </div>
+
+        <div class="proyectos-hero-number reveal">
+            <span>01</span>
+        </div>
+
+    </section>
+
+
+    <section class="proyecto-farmacorps">
+
+        <div class="proyecto-intro reveal">
+
+            <span class="section-label">
+                01 / FARMACORPS
+            </span>
+
+            <h2>
+                Farma<span>Corps</span>
+            </h2>
+
+            <p>
+                FarmaCorps es el proyecto que hemos desarrollado
+                como propuesta de una plataforma digital para una
+                farmacia. El proyecto contempla diferentes
+                interfaces para la navegaci&oacute;n, productos,
+                cuenta de usuario y carrito de compras.
+            </p>
+
+            <a href="javascript:void(0);"
+               class="figma-button"
+               id="figmaButton">
+
+                Ver proyecto en Figma
+
+                <span>&rarr;</span>
+
+            </a>
+
+        </div>
+
+
+        <div class="proyecto-galeria">
+
+            <div class="proyecto-imagen reveal">
+
+                <img src="@Url.Content("~/Images/farmacorps-inicio.png")"
+                     alt="FarmaCorps inicio" />
+
+                <div class="imagen-info">
+                    <span>01</span>
+                    <h3>
+                        Inicio
+                    </h3>
+                    <p>
+                        P&aacute;gina principal de FarmaCorps.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="proyecto-imagen reveal">
+
+                <img src="@Url.Content("~/Images/farmacorps-productos.png")"
+                     alt="FarmaCorps productos" />
+
+                <div class="imagen-info">
+                    <span>02</span>
+                    <h3>
+                        Productos
+                    </h3>
+                    <p>
+                        Visualizaci&oacute;n del cat&aacute;logo de productos.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="proyecto-imagen reveal">
+
+                <img src="@Url.Content("~/Images/farmacorps-carrito.png")"
+                     alt="FarmaCorps carrito" />
+
+                <div class="imagen-info">
+                    <span>03</span>
+                    <h3>
+                        Carrito
+                    </h3>
+                    <p>
+                        Interfaz del carrito de compras.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="proyecto-imagen reveal">
+
+                <img src="@Url.Content("~/Images/farmacorps-cuenta.png")"
+                     alt="FarmaCorps cuenta" />
+
+                <div class="imagen-info">
+                    <span>04</span>
+                    <h3>
+                        Cuenta
+                    </h3>
+                    <p>
+                        Interfaz de la cuenta del usuario.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="proyecto-cierre reveal">
+
+        <span class="section-label">
+            PORTAFOLIO
+        </span>
+
+        <h2>
+            Conoce el dise&ntilde;o
+            <span>completo.</span>
+        </h2>
+
+        <p>
+            Puedes consultar el prototipo y las diferentes
+            pantallas del proyecto directamente en Figma.
+        </p>
+
+        <button type="button"
+                class="figma-button"
+                id="figmaButtonBottom">
+
+            Abrir prototipo
+
+            <span>&rarr;</span>
+
+        </button>
+
+    </section>
+
+</div>
+
+@section Scripts {
+    <script src="@Url.Content("~/Scripts/Proyectos.js")"></script>
+}

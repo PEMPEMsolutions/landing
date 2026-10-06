@@ -1,0 +1,586 @@
+﻿.nosotros-page {
+    width: min(1100px, calc(100% - 80px));
+    margin: 0 auto;
+    padding-top: 35px;
+}
+
+.nosotros-hero {
+    min-height: 620px;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    column-gap: 170px;
+    align-items: center;
+    border-bottom: 1px solid rgba(130, 160, 180, 0.15);
+    position: relative;
+}
+
+.nosotros-intro {
+    position: relative;
+    z-index: 2;
+    max-width: 480px;
+}
+
+.hero-number {
+    color: #08a8e5;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 7px;
+}
+
+.hero-label {
+    display: block;
+    color: #08a8e5;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 6px;
+    margin-bottom: 25px;
+}
+
+.nosotros-intro h1 {
+    margin: 0;
+    color: #f4f7fb;
+    font-size: clamp(48px, 5vw, 70px);
+    font-weight: 700;
+    line-height: 0.98;
+    letter-spacing: -3px;
+}
+
+    .nosotros-intro h1 span {
+        color: #08a8e5;
+    }
+
+.nosotros-intro p {
+    max-width: 470px;
+    margin: 32px 0 0;
+    color: #829caf;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.hero-visual {
+    width: 430px;
+    height: 430px;
+    position: relative;
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(8, 168, 229, 0.45);
+}
+
+.circle-one {
+    width: 360px;
+    height: 360px;
+}
+
+.circle-two {
+    width: 270px;
+    height: 270px;
+    border-style: dashed;
+    border-color: rgba(8, 168, 229, 0.35);
+}
+
+.circle-three {
+    width: 175px;
+    height: 175px;
+}
+
+.tech-line {
+    position: absolute;
+    background: rgba(8, 168, 229, 0.35);
+}
+
+.line-horizontal {
+    width: 430px;
+    height: 1px;
+}
+
+.line-vertical {
+    width: 1px;
+    height: 430px;
+}
+
+.tech-diamond {
+    width: 125px;
+    height: 125px;
+    border: 1px solid #08a8e5;
+    transform: rotate(45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+    .tech-diamond span {
+        transform: rotate(-45deg);
+        color: #08a8e5;
+        font-size: 21px;
+        font-weight: bold;
+    }
+
+.tech-number {
+    position: absolute;
+    color: #08a8e5;
+    font-size: 9px;
+    letter-spacing: 2px;
+    z-index: 3;
+}
+
+.number-one {
+    top: 43px;
+    right: 45px;
+}
+
+.number-two {
+    bottom: 48px;
+    left: 58px;
+}
+
+.number-three {
+    bottom: 105px;
+    right: 42px;
+}
+
+.quienes-somos {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    column-gap: 100px;
+    padding: 105px 0;
+}
+
+.section-label {
+    display: block;
+    margin-bottom: 18px;
+    color: #08a8e5;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 6px;
+}
+
+.section-heading h2,
+.equipo-heading h2,
+.trabajo-heading h2,
+.nosotros-final h2 {
+    margin: 0;
+    color: #f4f7fb;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+}
+
+    .section-heading h2 span,
+    .equipo-heading h2 span,
+    .trabajo-heading h2 span,
+    .nosotros-final h2 span {
+        color: #08a8e5;
+    }
+
+.quienes-texto {
+    padding-top: 30px;
+}
+
+    .quienes-texto p {
+        margin: 0 0 24px;
+        color: #829caf;
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+.equipo-section {
+    padding: 95px 0;
+    border-top: 1px solid rgba(130, 160, 180, 0.15);
+}
+
+.equipo-heading {
+    max-width: 650px;
+    margin-bottom: 55px;
+}
+
+    .equipo-heading p {
+        max-width: 600px;
+        margin: 25px 0 0;
+        color: #829caf;
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+.socios-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.socio-card {
+    overflow: hidden;
+    border: 1px solid rgba(8, 168, 229, 0.2);
+    background: #061a28;
+    transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+}
+
+    .socio-card:hover {
+        transform: translateY(-7px);
+        border-color: rgba(8, 168, 229, 0.65);
+        background: #082235;
+    }
+
+.socio-image-container {
+    width: 100%;
+    height: 340px;
+    overflow: hidden;
+    background: #071d2c;
+}
+
+.socio-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.socio-card:hover .socio-image {
+    transform: scale(1.04);
+}
+
+.socio-content {
+    padding: 32px;
+}
+
+.socio-number {
+    display: block;
+    margin-bottom: 16px;
+    color: #08a8e5;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+
+.socio-content h3 {
+    margin: 0 0 12px;
+    color: #f4f7fb;
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+.socio-content h4 {
+    margin: 0 0 18px;
+    color: #08a8e5;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.socio-content p {
+    margin: 0;
+    color: #7d97aa;
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+.trabajo-section {
+    padding: 110px 0;
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    column-gap: 100px;
+    border-top: 1px solid rgba(130, 160, 180, 0.15);
+}
+
+.trabajo-heading {
+    padding-top: 10px;
+}
+
+.proceso {
+    border-left: 1px solid rgba(8, 168, 229, 0.3);
+}
+
+.proceso-item {
+    position: relative;
+    padding: 0 0 38px 35px;
+}
+
+    .proceso-item:last-child {
+        padding-bottom: 0;
+    }
+
+    .proceso-item::before {
+        content: "";
+        position: absolute;
+        left: -4px;
+        top: 2px;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #08a8e5;
+    }
+
+    .proceso-item span {
+        color: #08a8e5;
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .proceso-item h3 {
+        margin: 10px 0 8px;
+        color: #f4f7fb;
+        font-size: 21px;
+    }
+
+    .proceso-item p {
+        max-width: 520px;
+        margin: 0;
+        color: #7893a7;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+.nosotros-final {
+    margin: 20px 0 90px;
+    padding: 75px 40px;
+    text-align: center;
+    border-top: 1px solid rgba(8, 168, 229, 0.25);
+    border-bottom: 1px solid rgba(8, 168, 229, 0.25);
+    background: rgba(8, 168, 229, 0.025);
+}
+
+    .nosotros-final h2 {
+        margin-bottom: 20px;
+    }
+
+    .nosotros-final p {
+        max-width: 650px;
+        margin: 0 auto 30px;
+        color: #819bad;
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .nosotros-final .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 45px;
+        padding: 0 23px;
+        border: 1px solid #08a8e5;
+        border-radius: 25px;
+        background: #08a8e5;
+        color: #ffffff;
+        font-size: 13px;
+        transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+        .nosotros-final .btn-primary:hover {
+            background: #0798d0;
+            transform: translateY(-3px);
+        }
+
+.nosotros-intro,
+.hero-visual,
+.section-heading,
+.quienes-texto,
+.equipo-heading,
+.socio-card,
+.trabajo-heading,
+.proceso-item,
+.nosotros-final {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+    .nosotros-intro.visible,
+    .hero-visual.visible,
+    .section-heading.visible,
+    .quienes-texto.visible,
+    .equipo-heading.visible,
+    .socio-card.visible,
+    .trabajo-heading.visible,
+    .proceso-item.visible,
+    .nosotros-final.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+.circle-one {
+    animation: rotar 20s linear infinite;
+}
+
+.circle-two {
+    animation: rotar-inversa 16s linear infinite;
+}
+
+.tech-diamond {
+    animation: pulso 3s ease-in-out infinite;
+}
+
+@keyframes rotar {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotar-inversa {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes pulso {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.55;
+    }
+}
+
+@media (max-width: 950px) {
+    .nosotros-page {
+        width: min(760px, calc(100% - 50px));
+        padding-top: 45px;
+    }
+
+    .nosotros-hero {
+        grid-template-columns: 1fr;
+        row-gap: 55px;
+        padding: 45px 0 70px;
+    }
+
+    .nosotros-intro {
+        max-width: 650px;
+    }
+
+    .hero-visual {
+        justify-self: center;
+    }
+
+    .quienes-somos {
+        grid-template-columns: 1fr;
+        row-gap: 35px;
+        padding: 85px 0;
+    }
+
+    .quienes-texto {
+        padding-top: 0;
+    }
+
+    .trabajo-section {
+        grid-template-columns: 1fr;
+        row-gap: 50px;
+    }
+}
+
+@media (max-width: 700px) {
+    .nosotros-page {
+        width: calc(100% - 35px);
+    }
+
+    .nosotros-intro h1 {
+        font-size: 45px;
+        letter-spacing: -2px;
+    }
+
+    .hero-visual {
+        width: 330px;
+        height: 330px;
+    }
+
+    .circle-one {
+        width: 290px;
+        height: 290px;
+    }
+
+    .circle-two {
+        width: 220px;
+        height: 220px;
+    }
+
+    .circle-three {
+        width: 145px;
+        height: 145px;
+    }
+
+    .line-horizontal {
+        width: 330px;
+    }
+
+    .line-vertical {
+        height: 330px;
+    }
+
+    .tech-diamond {
+        width: 105px;
+        height: 105px;
+    }
+
+    .socios-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .socio-image-container {
+        height: 380px;
+    }
+}
+
+@media (max-width: 450px) {
+    .nosotros-intro h1 {
+        font-size: 39px;
+    }
+
+    .hero-visual {
+        width: 280px;
+        height: 280px;
+    }
+
+    .circle-one {
+        width: 250px;
+        height: 250px;
+    }
+
+    .circle-two {
+        width: 190px;
+        height: 190px;
+    }
+
+    .circle-three {
+        width: 125px;
+        height: 125px;
+    }
+
+    .line-horizontal {
+        width: 280px;
+    }
+
+    .line-vertical {
+        height: 280px;
+    }
+
+    .socio-image-container {
+        height: 330px;
+    }
+
+    .socio-content {
+        padding: 25px;
+    }
+
+    .nosotros-final {
+        padding: 55px 20px;
+    }
+}
